@@ -1,0 +1,72 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{padding:0;margin:0}
+
+address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:normal}
+pre,code,kbd,samp,tt{font-family:monospace;line-height:100%}
+q:before,q:after{content:''}
+abbr,acronym{border:0;font-variant:normal}
+sup{vertical-align:text-top}
+sub{vertical-align:text-bottom}
+
+ul,li{list-style:none}
+em,.em{font-style:italic}
+strong,.strong{font-weight:bold}
+img{border:0;vertical-align:top;-ms-interpolation-mode:bicubic}
+
+/*==table==*/
+table{border-collapse:collapse;border-spacing:0}
+caption,th{text-align:left}
+
+/*==Form==*/
+fieldset{border:none}
+legend{display:none}
+textarea{resize:none}
+button{overflow:visible}
+label,button{cursor:pointer;_cursor:hand}
+input,select,textarea{font:normal normal 14px "Verdana";color:#333;outline:none;/*去除Opera浏览器这些标签的默认样式*/}
+textarea,input[type|="text"],input[type|="password"]{-webkit-appearance:none/*去除webkit浏览器这些标签的默认样式*/}
+abbr[title],
+acronym[title]{border-bottom:1px dotted;cursor:help}
+input[type="hidden"]{display:none!important}
+
+/*==h1~h6==*/
+h1,.h1{font-size:18px;font-weight:bold}
+h2,.h2{font-size:16px;font-weight:bold}
+h3,.h3{font-size:14px;font-weight:bold}
+h4,.h4{font-size:14px;font-weight:normal}
+h5,.h5{font-size:12px;font-weight:normal}
+h6,.h6{font-size:12px;font-weight:normal}
+
+/* 字体大小*/
+.f12px{font-size:12px}
+.f14px{font-size:14px}
+
+/* 浮动*/
+.fl{float:left}
+.fr{float:right}
+
+/*==通用链接==*/
+a{color:#333;text-decoration:none;outline:none}
+a:hover{text-decoration:underline;outline:none}
+.blod a,.blod{font-weight:bold}
+
+/* 其它属性*/
+.center{text-align:center}
+.mid{vertical-align:middle}
+.hide{display:none}
+.submit{cursor:pointer;border:0}
+
+/*==collr==*/
+.collr,.collr .colr{overflow:hidden;zoom:1}
+.collr .coll{float:left;_margin-right:-3px}
+.collr .coll img{vertical-align:top}
+
+.p-collr{position:relative;zoom:1}
+.p-collr .coll{position:absolute;left:0;top:0}
+.p-collr .colr{zoom:1}
+
+/*==clear==*/
+.clear{clear:both;font-size:0px;width:0px;height:0;visibility:hidden;line-height:0}
+.clearfix{*zoom:1}
+.clearfix:after{content:"";display:block;height:0;clear:both;visibility:hidden}
+
+body{background-color:#FFF;font:12px/22px Arial,Tahoma,Verdana,"\5B8B\4F53";color:#333}

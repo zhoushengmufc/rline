@@ -1,0 +1,139 @@
+<html>
+	<head>
+		<title>rline-js正则表达式图形化工具</title>
+		<meta name="description" content="rline,js正则表达式工具,js正则表达式图形化工具,javascript正则表达式工具,javascript正则表达式图形化工具" />
+        <meta name="Keywords" content="rline,js正则表达式工具,js正则表达式图形化工具,javascript正则表达式工具,javascript正则表达式图形化工具" />
+
+		<link rel="stylesheet" type="text/css" href="css/common.css">
+		<script type="text/javascript" src="js/jquery.js"></script>
+	</head>
+	<body>
+	<style type="text/css">
+	    .animation-box{
+	    	width: 600px;
+	    	height: 400px;
+	    }
+	    .info-box{
+	    	width: 600px;
+	    	height: 400px;
+	    	overflow: scroll;
+	    }
+	    .flow-chart{
+	    	text-align: center;
+	    }
+	    .flow-chart ul{
+	    	
+	    }
+	    .flow-chart ul li{
+	    	margin-top: 5px;
+	    	border: 1px solid red;
+			padding: 5px;
+			margin: 5px;
+	    }
+	    .flow-chart ul li .reg{
+	    	background-color: #DB3434;
+	    	color: #fff;
+	    	padding: 5px 80px;
+	    	font-size: 18px;
+	    }
+	    .flow-chart ul li .res{
+	    	background-color: #146E1F;
+	    	color: #fff;
+	    	padding: 2px 80px;
+	    	font-size: 18px;
+	    	height: 18px;
+	    	line-height: 18px;
+	    }
+	    .content{
+	    	display: inline-block;
+	    	vertical-align: middle;
+	    }
+	    .branch{
+	    	display: inline-block;
+	    	vertical-align: middle;
+
+	    }
+	    #source{
+	    	width:800px;
+	    	margin:20px auto 0;
+	    	text-align:center; 
+	    	margin-bottom: 5px;
+	    }
+	    #source ul li{
+	    	margin-top: 5px;
+	    }
+	    #regexpInput,#textInput{
+	    	width: 500px;
+			height: 30px;
+			border: 1px solid gray;
+			padding: 0 5px;
+	    }
+	    #beginBtn{
+	    	padding: 5px 15px;
+	    }
+	    text{
+	    	font-size: 20px;
+	    }
+
+	</style>
+		<div id="source">
+		    <ul >
+		    	<li>正则表达式：<input type="text" id="regexpInput"/></li>
+		    	<li><p style="color:red;">请填入正则表达式，支持格式：1，没有斜线，如：<span style="font-size:20px;">\d|\s</span> ; 2，有斜线，如：<span style="font-size:20px;">/\d|\s/</span></p></li>
+		    	<li><p style="color:red;">点击展示按钮，将会在下方生成正则流程图；同时在控制台中将会输出该正则的数据结构。</p></li>
+		    	<li><p style="color:red;">请在高级浏览器中运行。</p></li>
+		    	<li style="display:none;">需要匹配的字符串：<input type="text" id="textInput"/></li>
+		    	<li><input type="button" id="beginBtn" value="展示流程图" /></li>
+		    	<li><a target="_blank" style="color:blue;font-size:20px;" href="https://github.com/finance-sh/rline">我们的github地址：https://github.com/finance-sh/rline</a></li>
+		    	<li><p style="color:blue;font-size:20px;">项目特色：用纯浏览器端JS实现，下载代码可直接本地运行。</p></li>
+		    	<li><p style="color:blue;">现在这个项目完成了第一期：图形化展示。第二期将完成字符串匹配过程展示功能。</p></li>
+		    </ul>
+		</div>
+		<style type="text/css">
+		    path{
+		    	 stroke:#000000;
+		    	 fill:none;
+		    	 stroke-width: 2px
+		    }
+		    rect{
+		    	fill:#bada55;
+		    }
+		    text{
+		    	fill:#000;
+		    }
+		    tspan{
+
+		    }
+		</style>
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="100%" width="100%" id="flowChart">
+			<g></g>
+		</svg>
+		<div style="height:20px;position:fixed;top:0;left:0;text-algin:center;font-size:20px;font-weight:bold;background-color:white;" id="regFixed"></div>
+	</body>
+	<script type="text/javascript" src="js/require.js"></script>
+	<script src="js/d3.v3.min.js" charset="utf-8"></script>
+    <script src="js/dagre-d3.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+	<script type="text/javascript">
+	  require.config({
+		    baseUrl: "js/"
+		 });
+	    var regexpInputDom=document.getElementById('regexpInput');
+	    var textInputDom=document.getElementById('textInput');
+	    var beginBtnDom=document.getElementById('beginBtn');
+	    beginBtnDom.onclick=function(){
+	    	require(['main'],function(main){
+	    		main.init(textInputDom.value,regexpInputDom.value);
+	    	});
+	    }
+	    
+	    $(window).scroll(function(){
+	    	if($(this).scrollTop()>40&&$('#regexpInput').val()!==''){
+	    	    $('#regFixed').html($('#regexpInput').val()).show();
+	    	}else{
+	    		$('#regFixed').hide();
+	    	}
+	    });
+	</script>
+</html>
